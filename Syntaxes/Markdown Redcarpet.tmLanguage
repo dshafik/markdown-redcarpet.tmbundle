@@ -60,17 +60,29 @@
 					<key>include</key>
 					<string>#fenced_block_coffee</string>
 				</dict>
-        <dict>
-          <key>include</key>
-          <string>#fenced_block_shell</string>
-        </dict>
-        <dict>
-          <key>include</key>
+				<dict>
+					<key>include</key>
+					<string>#fenced_block_shell</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#fenced_block_haml</string>
-        </dict>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#fenced_block_r</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced_block_html</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced_block_xml</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#fenced_block_php</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -124,22 +136,22 @@
 					<key>name</key>
 					<string>markup.raw.block.markdown.fenced</string>
 				</dict>
-        <key>fenced_block_coffee</key>
-        <dict>
-          <key>begin</key>
-          <string>(^|\G)([`]{3})[ ]*(?:coffee|coffeescript)$</string>
-          <key>end</key>
-          <string>(^|\G)([`]{3})($|\z)</string>
-          <key>name</key>
-          <string>markup.raw.block.markdown.fenced</string>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>source.coffee</string>
-            </dict>
-          </array>
-        </dict>
+				<key>fenced_block_coffee</key>
+				<dict>
+					<key>begin</key>
+					<string>(^|\G)([`]{3})[ ]*(?:coffee|coffeescript)$</string>
+					<key>end</key>
+					<string>(^|\G)([`]{3})($|\z)</string>
+					<key>name</key>
+					<string>markup.raw.block.markdown.fenced.coffee</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.coffee</string>
+						</dict>
+					</array>
+				</dict>
 				<key>fenced_block_haml</key>
 				<dict>
 					<key>begin</key>
@@ -147,30 +159,30 @@
 					<key>end</key>
 					<string>(^|\G)([`]{3})($|\z)</string>
 					<key>name</key>
-					<string>markup.raw.block.markdown.fenced</string>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
+					<string>markup.raw.block.markdown.fenced.haml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
 							<string>text.haml</string>
-            </dict>
-          </array>
-        </dict>
-				<key>fenced_block_r</key>
+						</dict>
+					</array>
+				</dict>
+				<key>fenced_block_html</key>
 				<dict>
 					<key>begin</key>
-					<string>(^|\G)([`]{3})\{*[ ]*(?:r|R).*\}*$</string>
+					<string>(^|\G)([`]{3})[ ]*html$</string>
 					<key>end</key>
 					<string>(^|\G)([`]{3})($|\z)</string>
 					<key>name</key>
-					<string>source.r.embedded.rmarkdown</string>
+					<string>markup.raw.block.markdown.fenced.html</string>
 					<key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>source.r</string>
-            </dict>
-          </array>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
+					</array>
 				</dict>
 				<key>fenced_block_javascript</key>
 				<dict>
@@ -188,6 +200,38 @@
 						</dict>
 					</array>
 				</dict>
+				<key>fenced_block_php</key>
+				<dict>
+					<key>begin</key>
+					<string>(^|\G)([`]{3})[ ]*php$</string>
+					<key>end</key>
+					<string>(^|\G)([`]{3})($|\z)</string>
+					<key>name</key>
+					<string>markup.raw.block.markdown.fenced.php</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.php#language</string>
+						</dict>
+					</array>
+				</dict>
+				<key>fenced_block_r</key>
+				<dict>
+					<key>begin</key>
+					<string>(^|\G)([`]{3})\{*[ ]*(?:r|R).*\}*$</string>
+					<key>end</key>
+					<string>(^|\G)([`]{3})($|\z)</string>
+					<key>name</key>
+					<string>source.r.embedded.rmarkdown</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.r</string>
+						</dict>
+					</array>
+				</dict>
 				<key>fenced_block_ruby</key>
 				<dict>
 					<key>begin</key>
@@ -195,7 +239,7 @@
 					<key>end</key>
 					<string>(^|\G)([`]{3})($|\z)</string>
 					<key>name</key>
-					<string>markup.raw.block.markdown.fenced</string>
+					<string>markup.raw.block.markdown.fenced.ruby</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -211,12 +255,28 @@
 					<key>end</key>
 					<string>(^|\G)([`]{3})($|\z)</string>
 					<key>name</key>
-					<string>markup.raw.block.markdown.fenced</string>
+					<string>markup.raw.block.markdown.fenced.sh</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
 							<string>source.shell</string>
+						</dict>
+					</array>
+				</dict>
+				<key>fenced_block_xml</key>
+				<dict>
+					<key>begin</key>
+					<string>(^|\G)([`]{3})[ ]*xml$</string>
+					<key>end</key>
+					<string>(^|\G)([`]{3})($|\z)</string>
+					<key>name</key>
+					<string>markup.raw.block.markdown.fenced.xml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.xml</string>
 						</dict>
 					</array>
 				</dict>
