@@ -9,13 +9,13 @@
 		<key>scope</key>
 		<string>markup.raw.inline, markup.raw.inline.markdown</string>
 		<key>settings.background</key>
-		<string>#000000</string>
+		<string>#dddddd</string>
 		<key>settings.caret</key>
-		<string>#FFFFFF</string>
+		<string>#000000</string>
 		<key>settings.fontName</key>
-		<string>Andale Mono</string>
+		<string>Source Code Pro</string>
 		<key>settings.foreground</key>
-		<string>#FFFFFF</string>
+		<string>#000000</string>
 	</dict>
 	<key>isDelta</key>
 	<true/>
